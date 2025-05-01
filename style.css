@@ -1,10 +1,131 @@
 *, *::before, *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
+:root {
+    /* Primary */
+    --purple-50: hsl(260, 100%, 95%);
+    --purple-300: hsl(264, 82%, 80%);
+    --purple-500: hsl(263, 55%, 52%);
 
+    /* Neutral */
+    --white: hsl(0, 0%, 100%);
+    --grey-100: hsl(214, 17%, 92%);
+    --grey-200: hsl(0, 0%, 81%);
+    --grey-400: hsl(224, 10%, 45%);
+    --grey-500: hsl(217, 19%, 35%);
+    --dark-blue: hsl(219, 29%, 14%);
+    --black: hsl(0, 0%, 7%);
 
+    /* Font Weights */
+    --thin: 400;
+    --regular: 500;
+    --bold: 600;
 
+    /* Font Sizes */
+    
+}
+
+body {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: var(--regular);
+}
+
+.main {
+    /* background-image: linear-gradient(to bottom right, var(--white), var(--grey-200)); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 7%;
+}
+
+.card {
+    width: 100%;
+    border-radius: 8px;
+    margin: 1rem;
+    padding: 1.5rem;
+    filter: drop-shadow(30px 80px 100px var(--grey-200));
+}
+
+.card--header {
+    display: flex;
+    align-items: center;
+    line-height: .7;
+}
+
+.profile__img {
+    border-radius: 50%;
+    margin-right: 1rem;
+    width: 1.6rem;
+}
+
+.username {
+    font-size: .7rem;
+    /* font-weight: var(--thin); */
+}
+
+.verified {
+    font-size: .6rem;
+    font-weight: var(--thin);
+}
+
+.testimonial__title {
+    font-size: 1.1rem;
+    font-weight: var(--bold);
+    padding: 1rem 0;
+}
+
+.testimonial__text {
+    font-size: .723rem;
+    font-weight: var(--thin);
+}
+
+.first {
+    background-color: var(--purple-500);
+    color: var(--purple-50);
+}
+
+.first .profile__img {
+    border: var(--purple-300) 2px solid;
+}
+
+.second {
+    background-color: var(--grey-500);
+    color: var(--white);
+}
+
+.second .profile__img {
+    border: var(--grey-200) 2px solid;
+}
+
+.third {
+    background-color: var(--white);
+    color: var(--grey-500);
+}
+
+.third .profile__img {
+    border: var(--grey-400) 2px solid;
+}
+
+.fourth {
+    background-color: var(--dark-blue);
+    color: var(--grey-200);
+}
+
+.fourth .profile__img {
+    border: var(--purple-500) 2px solid;
+}
+
+.fifth {
+    background-color: var(--white);
+    color: var(--grey-500);
+}
+
+.fifth .profile__img {
+    border: var(--grey-200) 2px solid;
+}
 
 
 /* .attribution { font-size: 11px; text-align: center; }
