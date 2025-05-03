@@ -22,19 +22,27 @@
     /* Font Weights */
     --thin: 400;
     --regular: 500;
-    --bold: 600;
+    --bold: 600;  
+}
 
-    /* Font Sizes */
-    
+html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 body {
     font-family: "Barlow Semi Condensed", sans-serif;
     font-weight: var(--regular);
+    background-image: linear-gradient(to bottom right, var(--white), var(--grey-200));
+    margin: 0;
+    max-width: 1440px;
+    
 }
 
 .main {
-    /* background-image: linear-gradient(to bottom right, var(--white), var(--grey-200)); */
+    height: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,10 +57,21 @@ body {
     filter: drop-shadow(30px 80px 100px var(--grey-200));
 }
 
+.quotation__img--div {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 3rem;
+}
+
 .card--header {
     display: flex;
     align-items: center;
     line-height: .7;
+}
+
+.testimonial__text {
+    line-height: 1.4;
 }
 
 .profile__img {
@@ -63,7 +82,6 @@ body {
 
 .username {
     font-size: .7rem;
-    /* font-weight: var(--thin); */
 }
 
 .verified {
@@ -85,6 +103,7 @@ body {
 .first {
     background-color: var(--purple-500);
     color: var(--purple-50);
+    grid-area: first;
 }
 
 .first .profile__img {
@@ -94,6 +113,7 @@ body {
 .second {
     background-color: var(--grey-500);
     color: var(--white);
+    grid-area: second;
 }
 
 .second .profile__img {
@@ -103,6 +123,7 @@ body {
 .third {
     background-color: var(--white);
     color: var(--grey-500);
+    grid-area: third;
 }
 
 .third .profile__img {
@@ -112,6 +133,7 @@ body {
 .fourth {
     background-color: var(--dark-blue);
     color: var(--grey-200);
+    grid-area: fourth;
 }
 
 .fourth .profile__img {
@@ -121,12 +143,52 @@ body {
 .fifth {
     background-color: var(--white);
     color: var(--grey-500);
+    grid-area: fifth;
 }
 
 .fifth .profile__img {
     border: var(--grey-200) 2px solid;
 }
 
+@media only screen and (min-width: 600px) {
+
+    .main {
+        flex-grow: 1;
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+        "first   first"
+        "second  third"
+        "fourth fourth"
+        "fifth   fifth";
+        gap: 1rem;
+        width: 100%;
+        padding: 4rem 4%;
+    }
+    
+    .card {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+}
+
+@media only screen and (min-width: 992px) {
+    
+    .main {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+        "first first  second fifth"
+        "third fourth fourth fifth";
+    }
+
+    .testimonial__title {
+        font-size: 1rem;
+    }
+
+}
 
 /* .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); } */
